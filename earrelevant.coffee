@@ -1,8 +1,8 @@
 Albums = new Meteor.Collection("albums")
 
 if Meteor.isClient
-  Template.album_list.albums =
-   -> return Albums.find({})
+  Template.album_list.albums =->
+   return Albums.find({})
 
   Template.input.events
     "click button": ->
@@ -20,10 +20,16 @@ if Meteor.isClient
               cover: result
 
   Template.album_info.events
-    "click button": ->
+    "click .close": ->
       Albums.remove
         name: this.name
         artist: this.artist
+
+  Template.album_info.rendered =->
+    $cover = $(this.find(".cover"))
+    console.log($cover)
+    Meteor.defer =>
+      $cover.removeClass("loading", 1000, "easeOutBounce")
 
 if Meteor.isServer
   Meteor.startup =>

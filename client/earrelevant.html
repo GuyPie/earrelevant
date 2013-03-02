@@ -4,7 +4,7 @@
 </head>
 
 <body>
-	<div class="container-fluid">
+	<div class="container-fluid hero-unit">
 		<div class="row-fluid">
 	  	<div class="span2">{{> input}}</div>
 	  	<div class="span7 offset1">{{> album_list}}</div>
@@ -31,14 +31,14 @@
 <template name="album_info">
 	<div class="row-fluid album_info">
 		<div class="span5">
-			<h1 class="artist">{{artist}}</h1>
-			<h2 class="name">{{name}}</h2>
+			<h2 class="artist">{{artist}}</h1>
+			<h3 class="album">{{name}}</h2>
 		</div>
 		<div class="span5 offset1">
-			<img class="cover" src="{{cover}}"/>
+			<img class="cover loading" src="{{cover}}"/>
 		</div>
 		<div class="span1">
-			<button class="btn">X</button>
+			<button class="close">&times;</button>
 		</div>
 	</div>
 </template>

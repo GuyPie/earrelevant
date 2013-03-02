@@ -12,3 +12,5 @@ stylus
 bootstrap
 node-modules
 less
+font-awesome
+jquery-ui

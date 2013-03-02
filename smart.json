@@ -1,5 +1,7 @@
 {
   "packages": {
-    "node-modules": {}
+    "node-modules": {},
+    "font-awesome": {},
+    "jquery-ui-bootstrap": {}
   }
 }
