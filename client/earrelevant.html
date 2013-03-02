@@ -6,8 +6,8 @@
 <body>
 	<div class="container-fluid">
 		<div class="row-fluid">
-	  	<div class="span4">{{> input}}</div>
-	  	<div class="span8">{{> album_list}}</div>
+	  	<div class="span2">{{> input}}</div>
+	  	<div class="span7 offset1">{{> album_list}}</div>
 		</div>
 	</div>
 </body>
@@ -29,7 +29,16 @@
 </template>
 
 <template name="album_info">
-	{{name}}
-	{{artist}}
-	<img src="{{cover}}"/>
+	<div class="row-fluid album_info">
+		<div class="span5">
+			<h1 class="artist">{{artist}}</h1>
+			<h2 class="name">{{name}}</h2>
+		</div>
+		<div class="span5 offset1">
+			<img class="cover" src="{{cover}}"/>
+		</div>
+		<div class="span1">
+			<button class="btn">X</button>
+		</div>
+	</div>
 </template>

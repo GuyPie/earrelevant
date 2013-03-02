@@ -5,20 +5,25 @@ if Meteor.isClient
    -> return Albums.find({})
 
   Template.input.events
-    "click button": (artist, album) ->
-      artist = $(".artist").val()
-      album = $(".album").val()
+    "click button": ->
+      artist = $("input.artist").val()
+      album = $("input.album").val()
 
       Meteor.call "getAlbumArt",
         artist,
         album,
         (error, result) ->
           if not error?
-            console.log("Adding " + album)
             Albums.insert
               name: album
               artist: artist
               cover: result
+
+  Template.album_info.events
+    "click button": ->
+      Albums.remove
+        name: this.name
+        artist: this.artist
 
 if Meteor.isServer
   Meteor.startup =>
@@ -38,6 +43,8 @@ if Meteor.isServer
               success: (data) ->
                   fut.ret(data.album.image[2]["#text"])
               error: (error) ->
-                  console.log("Error: " + error.message + artist)
+                  console.log("Error: " + error.message)
+                  fut.ret("/images/default_album.gif")
+
 
         return fut.wait()
