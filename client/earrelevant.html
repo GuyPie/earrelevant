@@ -1,0 +1,35 @@
+<head>
+  <title>earrelevant</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="container-fluid">
+		<div class="row-fluid">
+	  	<div class="span4">{{> input}}</div>
+	  	<div class="span8">{{> album_list}}</div>
+		</div>
+	</div>
+</body>
+
+<template name="input">
+  <input type="text" class="input-block-level artist" placeholder="artist" />
+  <input type="text" class="input-block-level album" placeholder="album" />
+  <button class="btn btn-large btn-primary">Add album</button>
+</template>
+
+<template name="album_list">
+	{{#each albums}}
+		<ul>
+			{{> album_info}}
+		</ul>
+	{{else}}
+		Add some albums!
+	{{/each}}
+</template>
+
+<template name="album_info">
+	{{name}}
+	{{artist}}
+	<img src="{{cover}}"/>
+</template>

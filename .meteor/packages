@@ -8,7 +8,7 @@ insecure
 preserve-inputs
 coffeescript
 jquery
-jquery-layout
 stylus
-angularjs
 bootstrap
+node-modules
+less

@@ -1,0 +1,19 @@
+{
+  "meteor": {
+    "git": "https://github.com/meteor/meteor.git",
+    "branch": "master",
+    "commit": "2d8b41a87cec884489ead138b5dfea31487363f3"
+  },
+  "dependencies": {
+    "basePackages": {
+      "node-modules": {}
+    },
+    "packages": {
+      "node-modules": {
+        "git": "https://github.com/possibilities/meteor-node-modules.git",
+        "tag": "v0.0.5",
+        "commit": "d502e5091759073a6baed856fadd93012749842d"
+      }
+    }
+  }
+}
